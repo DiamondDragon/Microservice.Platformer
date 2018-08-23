@@ -27,8 +27,8 @@ namespace Microservice.Platformer
                     yield return initializer;
             }
 
-            //yield return new BusInitializer();
             yield return new NHibernateInitializer();
+            yield return new BusInitializer(Configuration);
         }
 
         protected override IEnumerable<Module> CreateAutofacModules()
@@ -49,9 +49,10 @@ namespace Microservice.Platformer
         {
             private const string ScopeClaimName = "scope";
 
-            public override void ConfigureServices(IConfiguration configuration, IServiceCollection services)
+            public override void ConfigureServices(IServiceCollection services)
             {
-                base.ConfigureServices(configuration, services);
+                base.ConfigureServices(services);
+
                 services.AddAuthorization(options =>
                 {
                     options.AddPolicy(PolicyNames.ClientFinancialData, policy =>
