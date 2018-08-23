@@ -5,16 +5,27 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservice.Platformer", "Microservice.Platformer\Microservice.Platformer.csproj", "{59DEB380-68A4-4A51-9294-08655D4B2B77}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliFlo.Platform.NetCore", "..\..\_Git\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj", "{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Subsys|Any CPU = Subsys|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Subsys|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Subsys|Any CPU.Build.0 = Debug|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Subsys|Any CPU.ActiveCfg = Subsys|Any CPU
+		{EA88BE1C-C0B0-4025-AB23-11783C2A2C99}.Subsys|Any CPU.Build.0 = Subsys|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

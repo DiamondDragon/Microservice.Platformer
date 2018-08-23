@@ -1,12 +1,19 @@
-﻿using System;
 
-namespace Microservice.Platformer
+namespace Monolith.Bulk
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+#if NET471
+ 
+            RunUsingNetFramework(args);
+ 
+#else
+
+            RunUsingNetCore(args);
+
+#endif
         }
     }
 }
