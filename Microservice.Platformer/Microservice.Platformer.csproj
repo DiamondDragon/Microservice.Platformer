@@ -29,6 +29,11 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
     <PackageReference Include="Topshelf" Version="4.0.4" />
     <PackageReference Include="Topshelf.Log4Net" Version="4.0.4" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
