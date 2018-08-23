@@ -3,12 +3,12 @@ using Autofac;
 using IntelliFlo.AppStartup;
 using IntelliFlo.AppStartup.Initializers;
 using IntelliFlo.Platform.Security;
+using Microservice.Platformer.Modules;
+using Microservice.Platformer.v2;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Monolith.Bulk.Modules;
-using Monolith.Bulk.v2;
 
-namespace Monolith.Bulk
+namespace Microservice.Platformer
 {
     internal class Startup : MicroserviceStartup
     {

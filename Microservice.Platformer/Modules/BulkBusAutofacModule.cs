@@ -2,12 +2,12 @@ using System;
 using System.Linq;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
-using Module = Autofac.Module;
 using IntelliFlo.Platform.Bus;
 using IntelliFlo.Platform.Transactions;
-using Monolith.Bulk.Host;
+using Microservice.Platformer.Host;
+using Module = Autofac.Module;
 
-namespace Monolith.Bulk.Modules
+namespace Microservice.Platformer.Modules
 {
     public class BulkBusAutofacModule : Module
     {

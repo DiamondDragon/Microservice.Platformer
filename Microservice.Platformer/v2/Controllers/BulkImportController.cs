@@ -4,13 +4,13 @@ using IntelliFlo.Platform;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Http.Annotations;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
-using Monolith.Bulk.v2.Resources;
 using IntelliFlo.Platform.Http.ExceptionHandling;
 using IntelliFlo.Platform.Http.ExceptionHandling.Exceptions;
+using Microservice.Platformer.v2.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Monolith.Bulk.v2.Controllers
+namespace Microservice.Platformer.v2.Controllers
 {
     [Scope(Scopes.ClientData)]
     [AllowedAcceptHeaders("application/json")] // application/hal+json is not supported in v2

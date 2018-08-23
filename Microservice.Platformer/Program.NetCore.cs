@@ -1,8 +1,8 @@
 using IntelliFlo;
 using Microsoft.AspNetCore.Hosting;
-using Monolith.Bulk.Properties;
+using Microservice.Platformer.Properties;
 
-namespace Monolith.Bulk
+namespace Microservice.Platformer
 {
     partial class Program
     {

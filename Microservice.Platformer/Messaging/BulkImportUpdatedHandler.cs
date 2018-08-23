@@ -4,7 +4,7 @@ using IntelliFlo.Platform.Bus;
 using IntelliFlo.Platform.Principal.v2;
 using log4net;
 
-namespace Monolith.Bulk.Messaging
+namespace Microservice.Platformer.Messaging
 {
     public class BulkImportUpdatedHandler : IMessageHandlerAsync<BulkImportUpdated>
     {

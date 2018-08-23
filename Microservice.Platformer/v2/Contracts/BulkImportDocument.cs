@@ -2,7 +2,7 @@ using System;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
 using IntelliFlo.Platform.Http.HrefLinks;
 
-namespace Monolith.Bulk.v2.Contracts
+namespace Microservice.Platformer.v2.Contracts
 {
     [SwaggerDefinition("Import")]
     public class BulkImportDocument

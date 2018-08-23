@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
 
-namespace Monolith.Bulk.v2.Contracts
+namespace Microservice.Platformer.v2.Contracts
 {
     [SwaggerDefinition("ImportCollection")]
     public class BulkImportDocumentCollection : CollectionResource<BulkImportDocument>

@@ -1,7 +1,7 @@
 using IntelliFlo.Platform.Bus;
 using IntelliFlo.Platform.Interceptors;
 
-namespace Monolith.Bulk.Messaging
+namespace Microservice.Platformer.Messaging
 {
     public class BulkImportUpdated : BusMessage, IEventMessage
     {

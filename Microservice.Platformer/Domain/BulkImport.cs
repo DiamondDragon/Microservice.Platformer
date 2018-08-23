@@ -1,7 +1,7 @@
 using System;
 using IntelliFlo.Platform.NHibernate;
 
-namespace Monolith.Bulk.Domain
+namespace Microservice.Platformer.Domain
 {
     [Serializable]
     public class BulkImport : EqualityAndHashCodeProvider<BulkImport, Guid>

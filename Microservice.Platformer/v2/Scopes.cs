@@ -1,4 +1,4 @@
-namespace Monolith.Bulk.v2
+namespace Microservice.Platformer.v2
 {
     /// <summary>
     /// V2 scopes.

@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using IntelliFlo.Platform.Http;
-using Monolith.Bulk.v2.Contracts;
+using Microservice.Platformer.v2.Contracts;
 
-namespace Monolith.Bulk.v2.Resources
+namespace Microservice.Platformer.v2.Resources
 {
     public interface IBulkImportResource : IResource
     {

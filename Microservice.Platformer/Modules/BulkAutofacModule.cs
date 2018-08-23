@@ -1,11 +1,11 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Core;
-using Monolith.Bulk.Host.DbInitialization;
-using Monolith.Bulk.v2.Mappers;
+using Microservice.Platformer.Host.DbInitialization;
+using Microservice.Platformer.v2.Mappers;
 using Module = Autofac.Module;
 
-namespace Monolith.Bulk.Modules
+namespace Microservice.Platformer.Modules
 {
     public class BulkAutofacModule : Module
     {

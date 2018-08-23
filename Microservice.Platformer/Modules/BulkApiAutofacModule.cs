@@ -2,12 +2,12 @@ using System;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using IntelliFlo.Platform;
-using Module = Autofac.Module;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Transactions;
-using Monolith.Bulk.Properties;
+using Microservice.Platformer.Properties;
+using Module = Autofac.Module;
 
-namespace Monolith.Bulk.Modules
+namespace Microservice.Platformer.Modules
 {
     public class BulkApiAutofacModule : Module
     {

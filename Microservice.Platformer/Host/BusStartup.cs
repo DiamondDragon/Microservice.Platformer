@@ -3,9 +3,9 @@ using IntelliFlo.Platform.Bus;
 using IntelliFlo.Platform.Bus.Serialization;
 using JustSaying;
 using JustSaying.Messaging.MessageSerialisation;
-using Monolith.Bulk.Messaging;
+using Microservice.Platformer.Messaging;
 
-namespace Monolith.Bulk.Host
+namespace Microservice.Platformer.Host
 {
     [ExcludeFromCodeCoverage]
     public class BusConfigurator : DefaultBusConfigurator

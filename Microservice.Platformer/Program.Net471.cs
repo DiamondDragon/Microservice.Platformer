@@ -1,15 +1,15 @@
 using System;
-using System.Threading;
 using IntelliFlo;
 using IntelliFlo.AppStartup.Utils;
+using Microservice.Platformer.Properties;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Win32;
-using Monolith.Bulk.Properties;
 
-namespace Monolith.Bulk
+
+namespace Microservice.Platformer
 {
 #if NET471
- 
+
     using Topshelf;
     using Topshelf.HostConfigurators;
 

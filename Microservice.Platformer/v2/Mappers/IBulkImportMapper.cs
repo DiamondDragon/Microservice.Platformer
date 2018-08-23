@@ -1,7 +1,7 @@
-using Monolith.Bulk.Domain;
-using Monolith.Bulk.v2.Contracts;
+using Microservice.Platformer.Domain;
+using Microservice.Platformer.v2.Contracts;
 
-namespace Monolith.Bulk.v2.Mappers
+namespace Microservice.Platformer.v2.Mappers
 {
     public interface IBulkImportMapper
     {

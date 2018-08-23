@@ -5,12 +5,12 @@ using IntelliFlo.Platform.Http.ExceptionHandling.Exceptions;
 using IntelliFlo.Platform.NHibernate.Repositories;
 using IntelliFlo.Platform.Transactions;
 using IntelliFlo.Platform.v2.Security;
-using Monolith.Bulk.Domain;
-using Monolith.Bulk.v2.Contracts;
-using Monolith.Bulk.v2.Mappers;
+using Microservice.Platformer.Domain;
+using Microservice.Platformer.v2.Contracts;
+using Microservice.Platformer.v2.Mappers;
 using Task = System.Threading.Tasks.Task;
 
-namespace Monolith.Bulk.v2.Resources
+namespace Microservice.Platformer.v2.Resources
 {
     public class BulkImportResource : IBulkImportResource
     {

@@ -1,5 +1,5 @@
 
-namespace Monolith.Bulk
+namespace Microservice.Platformer
 {
     partial class Program
     {

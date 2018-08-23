@@ -5,10 +5,10 @@ using System.Reflection;
 using IntelliFlo.Platform.Database;
 using IntelliFlo.Platform.NHibernate;
 using log4net;
-using Monolith.Bulk.Domain;
+using Microservice.Platformer.Domain;
 using NHibernate;
 
-namespace Monolith.Bulk.Host.DbInitialization
+namespace Microservice.Platformer.Host.DbInitialization
 {
     public class AddSubsysTestData : TaskBase<AddSubsysTestData>
     {
