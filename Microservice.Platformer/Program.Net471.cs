@@ -26,7 +26,7 @@ namespace Microservice.Platformer
         public void Start()
         {
             host = MicroserviceHost
-                .Build<Startup>("Microservice.Platformer", args);
+                .Build<Startup>(args);
  
             host.Run();
         }

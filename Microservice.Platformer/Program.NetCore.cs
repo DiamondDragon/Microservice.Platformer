@@ -1,6 +1,5 @@
 using IntelliFlo;
 using Microsoft.AspNetCore.Hosting;
-using Microservice.Platformer.Properties;
 
 namespace Microservice.Platformer
 {
@@ -11,7 +10,7 @@ namespace Microservice.Platformer
         public static void RunUsingNetCore(string[] args)
         {
             MicroserviceHost
-                .Build<Startup>("Microservice.Platformer", args)
+                .Build<Startup>(args)
                 .Run();
         }
 
