@@ -27,7 +27,7 @@ namespace Microservice.Platformer
                     yield return initializer;
             }
 
-            yield return new NHibernateInitializer();
+            yield return new NHibernateInitializer(Configuration);
             yield return new BusInitializer(Configuration);
         }
 

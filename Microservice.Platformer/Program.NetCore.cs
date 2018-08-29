@@ -11,7 +11,7 @@ namespace Microservice.Platformer
         public static void RunUsingNetCore(string[] args)
         {
             MicroserviceHost
-                .Build<Startup>(Settings.Default.BaseAddress, args)
+                .Build<Startup>("Microservice.Platformer", args)
                 .Run();
         }
 

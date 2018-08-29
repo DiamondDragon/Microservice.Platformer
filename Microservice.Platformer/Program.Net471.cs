@@ -1,7 +1,6 @@
 using System;
 using IntelliFlo;
 using IntelliFlo.AppStartup.Utils;
-using Microservice.Platformer.Properties;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Win32;
 
@@ -27,7 +26,7 @@ namespace Microservice.Platformer
         public void Start()
         {
             host = MicroserviceHost
-                .Build<Startup>(Settings.Default.BaseAddress, args);
+                .Build<Startup>("Microservice.Platformer", args);
  
             host.Run();
         }

@@ -1,10 +1,9 @@
 using System;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
-using IntelliFlo.Platform;
+using IntelliFlo.AppStartup.Utils;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Transactions;
-using Microservice.Platformer.Properties;
 using Module = Autofac.Module;
 
 namespace Microservice.Platformer.Modules
@@ -13,7 +12,7 @@ namespace Microservice.Platformer.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterInstance(new MicroServiceSettings(Settings.Default)).As<IMicroServiceSettings>();
+            builder.RegisterMicroserviceSettings("Microservice.Platformer");
 
             builder.RegisterAssemblyTypes(this.GetType().Assembly)
                 .Where(IsResource)
