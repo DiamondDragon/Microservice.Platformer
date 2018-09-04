@@ -1,0 +1,16 @@
+﻿{
+  "baseAddress": "http://localhost:8200",
+  "tokenVariableName": "VAULT_TOKEN",
+  "configOverrides": [
+    {
+      "configKey": "connectionStrings:default",
+      "vaultPath": "secrets/data/dragon",
+      "format": "server=(local);database=Administration;user={{ userName }}; pwd={{ password }}"
+    },
+    {
+      "configKey": "connectionStrings:default",
+      "vaultPath": "secrets/data/dragon",
+      "format": "server=(local);database=SomeDb;user={{ userName }}; pwd={{ password }}"
+    }
+  ]
+}
