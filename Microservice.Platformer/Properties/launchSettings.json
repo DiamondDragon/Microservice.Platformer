@@ -2,7 +2,10 @@
   "profiles": {
     "Monolith.Bulk": {
       "commandName": "Project",
-      "commandLineArgs": "-dbprofile:dev"
+      "commandLineArgs": "-dbprofile:dev",
+      "environmentVariables": {
+        "VAULT_TOKEN": " d7e047b9-34ee-df52-ea51-a6bd633da6e2"
+      }
     }
   }
 }

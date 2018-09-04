@@ -4,13 +4,13 @@
   "configOverrides": [
     {
       "configKey": "connectionStrings:default",
-      "vaultPath": "secrets/data/dragon",
-      "format": "server=(local);database=Administration;user={{ userName }}; pwd={{ password }}"
+      "vaultPath": "secret/data/dragon",
+      "format": "server=(local);database=Administration;user={{ data.key1 }}; pwd={{ data.key2 }}"
     },
     {
       "configKey": "connectionStrings:default",
-      "vaultPath": "secrets/data/dragon",
-      "format": "server=(local);database=SomeDb;user={{ userName }}; pwd={{ password }}"
+      "vaultPath": "secret/data/dragon",
+      "format": "server=(local);database=SomeDb;user={{ data.key1 }}; pwd={{ data.key2 }}"
     }
   ]
 }
