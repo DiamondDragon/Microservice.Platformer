@@ -1,7 +1,6 @@
-
-using System.IO;
-using System.Linq;
-using IntelliFlo.AppStartup.Utils;
+using IntelliFlo;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.WindowsServices;
 
 
 namespace Microservice.Platformer
@@ -10,15 +9,13 @@ namespace Microservice.Platformer
     {
         static void Main(string[] args)
         {
-#if NET471
+            var host = MicroserviceHost
+                .Build<Startup>(args);
 
-            RunUsingNetFramework(args);
- 
-#else
-
-            RunUsingNetCore(args);
-
-#endif
+            if (MicroserviceHost.ShouldRunAsService(args))
+                host.RunAsService();
+            else
+                host.Run();
         }
     }
 }
