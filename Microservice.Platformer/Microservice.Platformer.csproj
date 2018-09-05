@@ -5,10 +5,6 @@
     <TargetFrameworks>net471;netcoreapp2.1</TargetFrameworks>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Documentation.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
@@ -34,6 +30,10 @@
 
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\_Git\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
