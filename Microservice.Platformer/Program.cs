@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting.WindowsServices;
 
 namespace Microservice.Platformer
 {
-    partial class Program
+    class Program
     {
         static void Main(string[] args)
         {
