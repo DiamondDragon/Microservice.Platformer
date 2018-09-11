@@ -2,11 +2,8 @@
 using Autofac;
 using IntelliFlo.AppStartup;
 using IntelliFlo.AppStartup.Initializers;
-using IntelliFlo.Platform.Security;
 using Microservice.Platformer.Modules;
-using Microservice.Platformer.v2;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Microservice.Platformer
 {
@@ -21,14 +18,11 @@ namespace Microservice.Platformer
         {
             foreach (var initializer in base.CreateInitializers())
             {
-                if (initializer is MvcInitializer)
-                    yield return new BulkMvcInitializer();
-                else
-                    yield return initializer;
+                 yield return initializer;
             }
 
-            yield return new NHibernateInitializer(Configuration);
-            yield return new BusInitializer(Configuration);
+            //yield return new NHibernateInitializer(Configuration);
+            //yield return new BusInitializer(Configuration);
         }
 
         protected override IEnumerable<Module> CreateAutofacModules()
@@ -42,48 +36,5 @@ namespace Microservice.Platformer
             yield return new BulkAutofacModule();
             yield return new BulkBusAutofacModule();
         }
-
-        #region Overrides
-
-        public class BulkMvcInitializer : MvcInitializer
-        {
-            private const string ScopeClaimName = "scope";
-
-            public override void ConfigureServices(IServiceCollection services)
-            {
-                base.ConfigureServices(services);
-
-                services.AddAuthorization(options =>
-                {
-                    options.AddPolicy(PolicyNames.ClientFinancialData, policy =>
-                    {
-                        policy.RequireAuthenticatedUser();
-                        policy.RequireClaim(ScopeClaimName, Scopes.ClientFinancialData);
-                    });
-                    options.AddPolicy(PolicyNames.ClientData, policy =>
-                    {
-                        policy.RequireAuthenticatedUser();
-                        policy.RequireClaim(ScopeClaimName, Scopes.ClientData);
-                    });
-                    options.AddPolicy(PolicyNames.FirmData, policy =>
-                    {
-                        policy.RequireAuthenticatedUser();
-                        policy.RequireClaim(ScopeClaimName, Scopes.FirmData);
-                    });
-                    options.AddPolicy(PolicyNames.FundData, policy =>
-                    {
-                        policy.RequireAuthenticatedUser();
-                        policy.RequireClaim(ScopeClaimName, Scopes.FundData);
-                    });
-                    options.AddPolicy(PolicyNames.SystemData, policy =>
-                    {
-                        policy.RequireAuthenticatedUser();
-                        policy.RequireClaim(ScopeClaimName, Scopes.SystemData);
-                    });
-                });
-            }
-        }
-
-        #endregion
     }
 }
