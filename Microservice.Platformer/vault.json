@@ -5,12 +5,12 @@
     {
       "configKey": "connectionStrings:default",
       "vaultPath": "secret/dragon",
-      "format": "server=(local);database=Administration;user={{ data.key1 }}; pwd={{ data.key2 }}"
+      "format": "server=(local);database=Administration;user={{ key1 }}; pwd={{ key2 }}"
     },
     {
-      "configKey": "connectionStrings:default",
+      "configKey": "connectionStrings:default2",
       "vaultPath": "secret/dragon",
-      "format": "server=(local);database=SomeDb;user={{ data.key1 }}; pwd={{ data.key2 }}"
+      "format": "server=(local);database=SomeDb;user={{ key1 }}; pwd={{ key2 }}"
     }
   ]
 }
