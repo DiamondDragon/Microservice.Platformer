@@ -11,6 +11,11 @@
       "configKey": "connectionStrings:default2",
       "vaultPath": "secret/dragon",
       "format": "server=(local);database=SomeDb;user={{ key1 }}; pwd={{ key2 }}"
+    },
+    {
+      "configKey": "connectionStrings:default3",
+      "vaultPath": "secret/dragon",
+      "format": "server=(local);database=SomeDb;user={{ key1 }}; pwd={{ key2 }}"
     }
   ]
 }
