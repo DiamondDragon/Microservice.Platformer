@@ -6,21 +6,20 @@ using IntelliFlo.Platform.Database;
 using IntelliFlo.Platform.NHibernate;
 using log4net;
 using Microservice.Platformer.Domain;
+using Microsoft.Extensions.Logging;
 using NHibernate;
 
 namespace Microservice.Platformer.Host.DbInitialization
 {
     public class AddSubsysTestData : TaskBase<AddSubsysTestData>
     {
-        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<AddSubsysTestData> logger;
         private readonly IReadWriteSessionFactoryProvider provider;
 
-        public AddSubsysTestData(IReadWriteSessionFactoryProvider provider)
+        public AddSubsysTestData(ILogger<AddSubsysTestData> logger, IReadWriteSessionFactoryProvider provider)
         {
-            if (provider == null)
-                throw new ArgumentNullException("provider");
-
-            this.provider = provider;
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.provider = provider ?? throw new ArgumentNullException(nameof(provider));
         }
 
         private void WithTransaction(ISession session, Action action)
@@ -34,7 +33,7 @@ namespace Microservice.Platformer.Host.DbInitialization
 
         public override object Execute(IDatabaseSettings settings)
         {
-            log.InfoFormat("Action=AddSubsysTestData, Message=About to add subsys test data");
+            logger.LogInformation("Action=AddSubsysTestData, Message=About to add subsys test data");
             using (var session = provider.SessionFactory.OpenSession())
             {
                 WithTransaction(session, () => CleanUpData(session));
@@ -47,12 +46,12 @@ namespace Microservice.Platformer.Host.DbInitialization
 
         private void CleanUpData(ISession session)
         {
-            log.InfoFormat("Action=AddSubsysTestData, Message=Cleaning up");
+            logger.LogInformation("Action=AddSubsysTestData, Message=Cleaning up");
         }
 
         private void AddOtherData(ISession session)
         {
-            log.InfoFormat("Action=AddSubsysTestData, Message=Adding data");
+            logger.LogInformation("Action=AddSubsysTestData, Message=Adding data");
             AddImportIntelliFlo(session);
         }
 
@@ -79,7 +78,7 @@ namespace Microservice.Platformer.Host.DbInitialization
 
         private void AddRefData(ISession session)
         {
-            log.InfoFormat("Action=AddSubsysTestData, Message=Adding ref data");
+            logger.LogInformation("Action=AddSubsysTestData, Message=Adding ref data");
         }
 
         public override void Dispose()

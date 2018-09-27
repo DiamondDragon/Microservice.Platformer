@@ -4,13 +4,14 @@ using IntelliFlo.AppStartup;
 using IntelliFlo.AppStartup.Initializers;
 using Microservice.Platformer.Modules;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace Microservice.Platformer
 {
     internal class Startup : MicroserviceStartup
     {
-        public Startup(IConfiguration configuration)
-            : base(configuration)
+        public Startup(ILoggerFactory loggerFactory, IConfiguration configuration)
+            : base(loggerFactory, configuration)
         {
         }
 
