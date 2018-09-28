@@ -24,16 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\_Git\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
+    <ProjectReference Include="..\..\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Update="vault.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
