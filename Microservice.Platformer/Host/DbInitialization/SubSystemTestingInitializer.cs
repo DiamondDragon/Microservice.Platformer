@@ -9,10 +9,10 @@ namespace Microservice.Platformer.Host.DbInitialization
     public class SubSystemTestingInitializer : InitialiserBase
     {
         public SubSystemTestingInitializer(
-            ILogger<AddSubsysTestData> logger,
+            ILoggerFactory loggerFactory,
             IReadWriteSessionFactoryProvider readWriteSessionFactoryProvider,
             IDatabaseInstance instance)
-            : base(new AddSubsysTestData(logger, readWriteSessionFactoryProvider))
+            : base(loggerFactory.CreateLogger<InitialiserBase>(), new AddSubsysTestData(loggerFactory, readWriteSessionFactoryProvider))
         {
         }
     }
