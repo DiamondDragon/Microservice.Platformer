@@ -23,7 +23,7 @@ namespace Microservice.Platformer
             }
 
             //yield return new NHibernateInitializer(Configuration);
-            //yield return new BusInitializer(Configuration);
+            yield return new BusInitializer(Configuration);
         }
 
         protected override IEnumerable<Module> CreateAutofacModules()
