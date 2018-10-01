@@ -5,3 +5,4 @@ dotnet publish -c Release --self-contained -f netcoreapp2.1
 
 Make sure application listens to 0.0.0.0 inteface
 
+Serilog - a_type={SourceContext} <- source of log
