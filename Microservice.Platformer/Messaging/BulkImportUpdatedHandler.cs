@@ -1,8 +1,6 @@
-using System.Reflection;
 using System.Threading.Tasks;
 using IntelliFlo.Platform.Bus;
 using IntelliFlo.Platform.Principal.v2;
-using log4net;
 using Microsoft.Extensions.Logging;
 
 namespace Microservice.Platformer.Messaging
