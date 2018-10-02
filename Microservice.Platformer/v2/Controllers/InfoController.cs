@@ -39,6 +39,8 @@ namespace Microservice.Platformer.v2.Controllers
         [HttpGet("vars")]
         public IEnumerable<KeyValuePair<string, string>> GetEnvironmentVariables([FromQuery]string pattern)
         {
+            throw new Exception("Test");
+
             var variables = Environment.GetEnvironmentVariables();
 
             return
