@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservice.Platformer", "Microservice.Platformer\Microservice.Platformer.csproj", "{59DEB380-68A4-4A51-9294-08655D4B2B77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliFlo.Platform.NetCore", "..\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj", "{38CC9B7E-06DC-41A8-96B2-A08312054E7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntelliFlo.Platform.NetCore", "..\..\_Git\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj", "{D82F35E6-E638-4DD8-A080-40A2BBEA035F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,12 +20,12 @@ Global
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Subsys|Any CPU.ActiveCfg = Debug|Any CPU
 		{59DEB380-68A4-4A51-9294-08655D4B2B77}.Subsys|Any CPU.Build.0 = Debug|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Subsys|Any CPU.ActiveCfg = Subsys|Any CPU
-		{38CC9B7E-06DC-41A8-96B2-A08312054E7B}.Subsys|Any CPU.Build.0 = Subsys|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Subsys|Any CPU.ActiveCfg = Subsys|Any CPU
+		{D82F35E6-E638-4DD8-A080-40A2BBEA035F}.Subsys|Any CPU.Build.0 = Subsys|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
