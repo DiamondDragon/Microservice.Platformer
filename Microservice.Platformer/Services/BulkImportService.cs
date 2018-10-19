@@ -40,7 +40,7 @@ namespace Microservice.Platformer.Services
 
         public class Specification : ISpecification<NewBulkImport>
         {
-            public IEnumerable<Expression<Func<NewBulkImport, object>>> Includes { get; }
+            public IEnumerable<Expression<Func<NewBulkImport, object>>> Includes { get; } = Enumerable.Empty<Expression<Func<NewBulkImport, object>>>();
             public IQueryable<NewBulkImport> AddPredicates(IQueryable<NewBulkImport> query)
             {
                 return query;
