@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Monolith.Bulk": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-dbprofile:dev"
     }
   }
 }

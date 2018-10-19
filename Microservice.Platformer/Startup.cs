@@ -2,6 +2,7 @@
 using Autofac;
 using IntelliFlo.AppStartup;
 using IntelliFlo.AppStartup.Initializers;
+using Microservice.Platformer.DataLayer;
 using Microservice.Platformer.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -22,8 +23,9 @@ namespace Microservice.Platformer
                  yield return initializer;
             }
 
-            yield return new DatabaseInitializer(Configuration);
-            yield return new NHibernateInitializer(Configuration);
+            //yield return new DatabaseInitializer(Configuration);
+            //yield return new NHibernateInitializer(Configuration);
+            yield return new EntityFrameworkInitializer<PlatformerDbContext>(Configuration);
             yield return new BusInitializer(Configuration);
         }
 
