@@ -9,7 +9,7 @@
 
   <class name="Microservice.Platformer.Domain.BulkImport" table="[TFileImportHeader]">
     <id name="Id" column="FileImportHeaderId">
-      <generator class="assigned"/>
+      <generator class="identity"/>
     </id>
     <property name="EntryDate" />
     <property name="LastUpdatedDate" />

@@ -20,6 +20,7 @@ namespace Microservice.Platformer.Modules
 
             builder.RegisterType<BulkImportService>()
                 .As<IBulkImportService>()
+                .EnableInterfaceInterceptors()
                 .InterceptedBy(typeof(TransactionInterceptor));
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())

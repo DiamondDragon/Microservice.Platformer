@@ -20,7 +20,7 @@ namespace Microservice.Platformer.Services
         [Transaction]
         public void GetData()
         {
-            var result = repository.FindOne(new ICriterion[0]);
+            var result = repository.FindFirst();
         }
 
         [Transaction]
