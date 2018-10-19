@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using IntelliFlo.Platform.EntityFramework.Repositories;
 using IntelliFlo.Platform.EntityFramework.Specifications;
 using IntelliFlo.Platform.Transactions;
@@ -36,6 +37,24 @@ namespace Microservice.Platformer.Services
 
 
             repository.AddAsync(bulk).Wait();
+        }
+
+        [Transaction]
+        public async Task<NewBulkImport[]> GetDataAsync()
+        {
+            return await repository.ListAsync(null, null, new Specification());
+        }
+
+        [Transaction]
+        public async Task AddDataAsync()
+        {
+            var bulk = new NewBulkImport
+            {
+                Name = "Some data",
+                CreatedAt = DateTime.UtcNow,
+            };
+
+            await repository.AddAsync(bulk);
         }
 
         public class Specification : ISpecification<NewBulkImport>

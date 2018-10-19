@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using IntelliFlo.Platform;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
@@ -60,6 +61,17 @@ namespace Microservice.Platformer.v2.Controllers
         {
             importService.AddData();
             importService.GetData();;
+
+            return Ok();
+        }
+
+
+        [HttpGet("dbtest-async")]
+        [HttpPost("dbtest-async")]
+        public async Task<IActionResult> DbTestAsync()
+        {
+            await importService.AddDataAsync();
+            await importService.GetDataAsync(); ;
 
             return Ok();
         }
