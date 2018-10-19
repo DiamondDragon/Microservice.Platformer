@@ -7,7 +7,7 @@ namespace Microservice.Platformer.v2.Contracts
     [SwaggerDefinition("Import")]
     public class BulkImportDocument
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Href("v2/imports/{Id}")]
         public string Href { get; set; }

@@ -6,6 +6,7 @@ using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
 using IntelliFlo.Platform.Http.ExceptionHandling;
 using IntelliFlo.Platform.Http.ExceptionHandling.Exceptions;
+using Microservice.Platformer.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -19,10 +20,14 @@ namespace Microservice.Platformer.v2.Controllers
     public class InfoController : Controller
     {
         private readonly IConfiguration configuration;
+        private readonly IBulkImportService importService;
 
-        public InfoController(IConfiguration configuration)
+        public InfoController(
+            IConfiguration configuration,
+            IBulkImportService importService)
         {
             this.configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            this.importService = importService ?? throw new ArgumentNullException(nameof(importService));
         }
 
         [HttpGet("config")]
@@ -47,6 +52,16 @@ namespace Microservice.Platformer.v2.Controllers
                  orderby key
                  select new KeyValuePair<string, string>(key, variables[key].ToString()))
                 .ToArray();
+        }
+
+        [HttpGet("dbtest")]
+        [HttpPost("dbtest")]
+        public IActionResult DbTest()
+        {
+            importService.AddData();
+            importService.GetData();;
+
+            return Ok();
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetSettingsRecursive(IEnumerable<IConfigurationSection> configurationSections)

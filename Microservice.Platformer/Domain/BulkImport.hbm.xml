@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="Microservice.Platformer.Domain"
-                   assembly="Monolith.Bulk"
+                   assembly="Microservice.Platformer"
                    default-lazy="true"
                    default-access="property"
                    schema="dbo"
@@ -11,21 +11,8 @@
     <id name="Id" column="FileImportHeaderId">
       <generator class="assigned"/>
     </id>
-    <property name="TenantId" />
-    <property name="UserId" />
     <property name="EntryDate" />
     <property name="LastUpdatedDate" />
     <property name="HeaderData" />
-    <property name="ShouldRecordsBeDuplicated" />
-    <property name="Status" />
-    <property name="IsBeingProcessed" />
-    <property name="NumberOfRecords" />
-    <property name="NumberOfRecordsFailed" />
-    <property name="NumberOfRecordsDuplicated" />
-    <property name="Message" />
-    <property name="SystemMessage" />
-    <property name="FileId" />
-    <property name="OriginalFileName" />
-    <property name="FileImportType" />
   </class>
 </hibernate-mapping>

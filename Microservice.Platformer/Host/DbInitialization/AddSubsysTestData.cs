@@ -60,14 +60,12 @@ namespace Microservice.Platformer.Host.DbInitialization
 
             var import = new BulkImport
             {
-                Id = Guid.Parse(importId),
-                TenantId = 10155,
+                Id = 1234,
                 EntryDate = new DateTime(2002, 01, 01, 0, 0, 0, DateTimeKind.Utc),
                 LastUpdatedDate = new DateTime(2002, 01, 01, 0, 0, 0, DateTimeKind.Utc),
-                Status = "AwaitingProcessing"
             };
 
-            var query = session.Query<BulkImport>().Where(x => x.Id == Guid.Parse(importId));
+            var query = session.Query<BulkImport>().Where(x => x.Id == 12345);
 
             if (query.Any())
                 return;

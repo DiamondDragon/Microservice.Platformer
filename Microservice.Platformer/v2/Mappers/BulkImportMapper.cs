@@ -13,10 +13,7 @@ namespace Microservice.Platformer.v2.Mappers
 
             return new BulkImportDocument
             {
-                Id = bulkImport.Id,
-                Message = bulkImport.Message,
-                RecordCount = bulkImport.NumberOfRecords ?? 0,
-                Status = bulkImport.Status,
+                Id = 12345,
                 UploadedAt = bulkImport.EntryDate
             };
         }

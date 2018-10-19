@@ -32,7 +32,7 @@ namespace Microservice.Platformer.v2.Resources
             this.mapper = mapper;
         }
 
-        public async Task<BulkImportDocument> Get(Guid importId)
+        public async Task<BulkImportDocument> Get(int importId)
         {
             var import = importRepository
                 .Query()
@@ -40,8 +40,6 @@ namespace Microservice.Platformer.v2.Resources
 
             if (import == null)
                 throw new ResourceNotFoundException("bulkImport cannot be found");
-
-            tenantSecurity.ForResource("BulkImport", importId).Assert(import.TenantId);
 
             var mapped = mapper.ToContaract(import);
 

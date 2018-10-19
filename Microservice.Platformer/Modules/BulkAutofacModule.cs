@@ -1,7 +1,10 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Core;
+using Autofac.Extras.DynamicProxy;
+using IntelliFlo.Platform.Transactions;
 using Microservice.Platformer.Host.DbInitialization;
+using Microservice.Platformer.Services;
 using Microservice.Platformer.v2.Mappers;
 using Module = Autofac.Module;
 
@@ -14,6 +17,10 @@ namespace Microservice.Platformer.Modules
         {
             builder.RegisterType<SubSystemTestingInitializer>();
             builder.RegisterType<DevInitializer>();
+
+            builder.RegisterType<BulkImportService>()
+                .As<IBulkImportService>()
+                .InterceptedBy(typeof(TransactionInterceptor));
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .Where(t => t.Name.EndsWith("AutoMapperModule"))

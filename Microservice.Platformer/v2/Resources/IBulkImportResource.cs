@@ -7,7 +7,7 @@ namespace Microservice.Platformer.v2.Resources
 {
     public interface IBulkImportResource : IResource
     {
-        Task<BulkImportDocument> Get(Guid importId);
+        Task<BulkImportDocument> Get(int importId);
         Task<BulkImportDocumentCollection> GetAll(int top, int skip);
     }
 }
