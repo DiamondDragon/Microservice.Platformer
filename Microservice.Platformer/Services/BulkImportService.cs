@@ -23,7 +23,7 @@ namespace Microservice.Platformer.Services
         [Transaction]
         public void GetData()
         {
-            var result = repository.ListAsync(null, null, new Specification()).Result;
+            var result = repository.ListAsync(new Specification()).Result;
         }
 
         [Transaction]
@@ -42,7 +42,7 @@ namespace Microservice.Platformer.Services
         [Transaction]
         public async Task<NewBulkImport[]> GetDataAsync()
         {
-            return await repository.ListAsync(null, null, new Specification());
+            return await repository.ListAsync(new Specification());
         }
 
         [Transaction]
