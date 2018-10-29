@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IntelliFlo.Platform;
+using IntelliFlo.Platform.Client;
 using IntelliFlo.Platform.Http;
 using IntelliFlo.Platform.Http.Documentation.Annotations;
 using IntelliFlo.Platform.Http.ExceptionHandling;
@@ -10,6 +11,7 @@ using IntelliFlo.Platform.Http.ExceptionHandling.Exceptions;
 using Microservice.Platformer.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
 
 namespace Microservice.Platformer.v2.Controllers
 {
@@ -22,13 +24,16 @@ namespace Microservice.Platformer.v2.Controllers
     {
         private readonly IConfiguration configuration;
         private readonly IBulkImportService importService;
+        private readonly IServiceClientFactory serviceClientFactory;
 
         public InfoController(
             IConfiguration configuration,
-            IBulkImportService importService)
+            IBulkImportService importService,
+            IServiceClientFactory serviceClientFactory)
         {
             this.configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             this.importService = importService ?? throw new ArgumentNullException(nameof(importService));
+            this.serviceClientFactory = serviceClientFactory ?? throw new ArgumentNullException(nameof(serviceClientFactory));
         }
 
         [HttpGet("config")]
@@ -75,6 +80,23 @@ namespace Microservice.Platformer.v2.Controllers
 
             return Ok();
         }
+
+        [HttpGet("collaborator-test")]
+        public async Task<IActionResult> CollaboratorTest()
+        {
+            var data = await ReadData();
+
+            return Ok(data);
+        }
+
+        private async Task<KeyValuePair<string, string>[]> ReadData()
+        {
+            using (var client = serviceClientFactory.Create("Platformer"))
+            {
+                return (await client.Get<KeyValuePair<string, string>[]>("v2/info/vars")).Resource;
+            }
+        }
+
 
         private IEnumerable<KeyValuePair<string, string>> GetSettingsRecursive(IEnumerable<IConfigurationSection> configurationSections)
         {
