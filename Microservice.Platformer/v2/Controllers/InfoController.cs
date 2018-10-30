@@ -37,18 +37,28 @@ namespace Microservice.Platformer.v2.Controllers
         }
 
         [HttpGet("config")]
-        public IEnumerable<KeyValuePair<string, string>> GetConfig([FromQuery]string pattern)
+        public object GetConfig([FromQuery]string pattern)
         {
             return
                 (from item in GetSettingsRecursive(configuration.GetChildren())
                  where string.IsNullOrEmpty(pattern) || item.Key.Contains(pattern, StringComparison.OrdinalIgnoreCase)
                  orderby item.Key
-                 select item)
+                 select new
+                 {
+                     Id = 111,
+                     Key = item.Key,
+                     Value = item.Value,
+                     Details = new
+                     {
+                         Key = 123,
+                         Value = 123
+                     }
+                 })
                 .ToArray();
         }
 
         [HttpGet("vars")]
-        public IEnumerable<KeyValuePair<string, string>> GetEnvironmentVariables([FromQuery]string pattern)
+        public IEnumerable<object> GetEnvironmentVariables([FromQuery]string pattern)
         {
             var variables = Environment.GetEnvironmentVariables();
 
@@ -56,7 +66,17 @@ namespace Microservice.Platformer.v2.Controllers
                 (from string key in variables.Keys
                  where string.IsNullOrEmpty(pattern) || key.Contains(pattern, StringComparison.OrdinalIgnoreCase)
                  orderby key
-                 select new KeyValuePair<string, string>(key, variables[key].ToString()))
+                 select new
+                 {
+                     Id = 111,
+                     Key = key,
+                     Value = variables[key].ToString(),
+                     Details = new
+                     {
+                         Key = 123,
+                         Value = 123
+                     }
+                 })
                 .ToArray();
         }
 
@@ -89,14 +109,22 @@ namespace Microservice.Platformer.v2.Controllers
             return Ok(data);
         }
 
-        private async Task<KeyValuePair<string, string>[]> ReadData()
+        private async Task<Dto[]> ReadData()
         {
             using (var client = serviceClientFactory.Create("Platformer"))
             {
-                return (await client.Get<KeyValuePair<string, string>[]>("v2/info/vars")).Resource;
+                return (await client.Get<Dto[]>("v2/info/vars")).Resource;
             }
         }
 
+
+        public class Dto
+        {
+            public int Id { get; set; }
+            public string Key { get; set; }
+            public string Name { get; }
+            public string Value { get; set; }
+        }
 
         private IEnumerable<KeyValuePair<string, string>> GetSettingsRecursive(IEnumerable<IConfigurationSection> configurationSections)
         {
