@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
+    <ProjectReference Include="..\..\..\_Git\Intelliflo.Platform.NetCore\src\IntelliFlo.Platform.NetCore\IntelliFlo.Platform.NetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

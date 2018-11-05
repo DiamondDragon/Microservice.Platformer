@@ -12,7 +12,7 @@ using Microservice.Platformer.v2.Contracts;
 using Microservice.Platformer.v2.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Microservice.Platformer.v2.Controllers
 {
